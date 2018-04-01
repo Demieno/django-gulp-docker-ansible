@@ -1,0 +1,8 @@
+node_modules
+
+static/lib/
+static/dev/
+*.py[co]
+__pycache__
+db.dump.sql
+docker-compose.override.yml

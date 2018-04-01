@@ -1,0 +1,55 @@
+.news
+    &__elem
+        position: relative
+        padding: 42px 21px 47px 188px
+        margin-bottom: 30px
+        width: 634px
+        float: right
+        box-sizing: border-box
+        border: 2px solid
+        border-color: #eef0f6
+        transition: border-color .3s
+        &:hover, &._main
+            border-color: #da251d
+    &__photo
+        position: absolute
+        left: -97px
+        top: 50px
+        max-width: 220px
+    &__name
+        line-height: 36px
+        font-size: 30px
+        font-weight: 300
+        color: #da251d
+    &__desc
+        margin-top: 37px
+        margin-bottom: 41px
+        color: #181818
+        line-height: 24px
+    &__date
+        color: #959595
+        &._inner
+            margin-bottom: 37px
+    &__image
+        margin-bottom: 24px
+    &__content
+        line-height: 26px
+        & p
+            margin-bottom: -6px
+            padding-bottom: 0
+    &__social
+        margin-top: 39px
+        margin-bottom: 11px
+        padding: 32px 0 28px 27px
+        border: 2px solid #eef0f6
+    &__share
+        display: inline-block
+        vertical-align: top
+        margin-top: -3px
+        margin-left: 13px
+
+a.news__name
+    color: #da251d
+    transition: color .3s
+    &:hover
+        color: darken(#da251d, 15%)

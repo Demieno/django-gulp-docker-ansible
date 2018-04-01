@@ -1,0 +1,50 @@
+networks: {}
+services:
+  db-nameproject:
+    build:
+      context: ./docker/postgres
+      dockerfile: Dockerfile
+    restart: always
+  nginx-nameproject:
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    command: /tmp/docker/run.sh
+    environment:
+      SSH_AUTH_SOCK: null
+    ports:
+    - 80:80/tcp
+    privileged: true
+    restart: always
+    volumes:
+    - ./docker/nginx/conf.d:/etc/nginx/conf.d:rw
+    - media-nameproject:/srv/media:rw
+    - static-nameproject:/srv/static:rw
+    - /tmp:/tmp:rw
+    - ./docker/nginx:/tmp/docker:rw
+  uwsgi-nameproject:
+    build:
+      context: .
+      dockerfile: docker/uwsgi/Dockerfile
+    command: ./docker/uwsgi/run.sh
+    depends_on:
+    - db-nameproject
+    environment:
+      DJANGO_SETTINGS_MODULE: base.settings.dev
+      SSH_AUTH_SOCK: null
+      PUDB_RDB_HOST: 0.0.0.0
+    ports:
+    - 6899:6899
+    privileged: true
+    restart: always
+    volumes:
+    - media-nameproject:/srv/project/media_root:rw
+    - .:/srv/project/src:rw
+    - static-nameproject:/srv/project/static_root:rw
+    - /tmp:/tmp:rw
+version: '2.0'
+volumes:
+  media-nameproject: {}
+  python-nameproject: {}
+  static-nameproject: {}
+

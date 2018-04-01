@@ -1,0 +1,57 @@
+.contacts
+    margin-top: -9px
+    +clearfix
+    &__link
+        color: #da251d
+        transition: color .3s
+        &:hover
+            color: darken(#da251d, 10%)
+    &__form
+        margin-top: 47px
+        padding: 43px 60px 50px 48px
+        border: 2px solid #eef0f6
+    &__form-title
+        margin-bottom: 24px
+        font-size: 30px
+        font-weight: 300
+    &__input
+        display: block
+        width: 415px
+        border: 0
+        outline: 0
+        padding: 16px 0
+        margin-bottom: 32px
+        border-bottom: 1px solid #c4c6cf
+        &._error
+            border-bottom: 1px solid #da251d
+    &__textarea
+        display: block
+        width: 620px
+        padding: 17px 0 0 0
+        margin-bottom: 38px
+        border: 0
+        outline: 0
+        border-bottom: 1px solid #c4c6cf
+        &._error
+            border-bottom: 1px solid #da251d
+    &__submit
+        width: 197px
+        padding: 12px 0 14px 0
+        text-align: center
+        background-color: #da251d
+        color: #fff
+        border: 0
+        outline: 0
+        cursor: pointer
+        font-weight: 300
+        font-size: 18px
+        letter-spacing: 0.01em
+        transition: background-color .3s
+        &:hover
+            background-color: darken(#da251d, 10%)
+    &__error
+        color: #da251d
+        & li
+            margin-bottom: 7px
+    &__success
+        color: #30b25b

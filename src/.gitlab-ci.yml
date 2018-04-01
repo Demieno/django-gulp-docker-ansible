@@ -1,0 +1,21 @@
+deploy to staging:
+  environment: staging
+  stage: deploy
+  script:
+  - echo "Staging"
+  - ansible-playbook ansible/site.yml -i ansible/hosts -l staging -t deploy -vv
+  before_script:
+  - git submodule update --init --recursive
+  only:
+  - dev
+
+deploy to prod:
+  environment: prod
+  stage: deploy
+  script:
+  - echo "Prod"
+  - ansible-playbook ansible/site.yml -i ansible/hosts -l prod -t deploy -vv
+  before_script:
+  - git submodule update --init --recursive
+  only:
+  - master

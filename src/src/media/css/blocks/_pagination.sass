@@ -1,0 +1,50 @@
+.pagination
+    padding-top: 20px
+    font-size: 0
+    text-align: center
+    clear: both
+    &._wait-help
+        padding-bottom: 42px
+    &__elem
+        position: relative
+        display: inline-block
+        vertical-align: top
+        margin: 0 5px
+        width: 44px
+        height: 44px
+        border: 2px solid #eef0f6
+        box-sizing: border-box
+        font-size: 16px
+        font-weight: 600
+        color: #181818
+        transition: background-color .3s, color .3s
+        +br(50%)
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+        &._active, &:hover
+            background-color: #da251d
+            border: 2px solid #da251d
+            color: #fff
+        &._next, &._prev
+            border: 0
+            &:hover
+                background-color: transparent
+                border: 0
+        &._next
+            transform: rotate(180deg)
+        &._dots
+            border: 0
+            &:hover
+                background-color: transparent
+                border: 0
+                color: #000
+    &__num
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)

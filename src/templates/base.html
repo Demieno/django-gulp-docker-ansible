@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html >
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=1210"/>
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="keywords" content="{{ page.keywords }}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+    <link rel="shortcut icon" href="{% if site_settings.favicon %}{{ site_settings.favicon.url }}{% endif %}" type="images">
+
+    {% if site_settings.scripts_head %}
+        {{ site_settings.scripts_head|safe }}
+    {% endif %}
+
+  </head>
+  <body>
+
+    {% if site_settings.scripts_after_open_body %}
+        {{ site_settings.scripts_after_open_body|safe }}
+    {% endif %}
+
+    {% include 'include/header.html' %}
+    {% include 'include/top_banner.html' %}
+
+    <div class="container _flex">
+        <div class="container__left">
+            {% block container_left %}
+            {% endblock %}
+        </div>
+
+        <div class="container__right">
+            {% block container_right %}
+                {% include 'include/need_your_help.html' %}
+            {% endblock %}
+        </div>
+    </div>
+
+    {% include 'include/footer.html' %}
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    {% if site_settings.scripts_before_close_body %}
+        {{ site_settings.scripts_before_close_body|safe }}
+    {% endif %}
+  </body>
+</html>

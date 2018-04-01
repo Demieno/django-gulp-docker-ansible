@@ -1,0 +1,7 @@
+var $rightBar = document.querySelector('.container__right');
+var $partners = document.querySelector('.left-partners');
+
+if($rightBar.clientHeight <= 1400) {
+    $partners.classList.add('_static');
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6Im1haW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgJHJpZ2h0QmFyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmNvbnRhaW5lcl9fcmlnaHQnKTtcbnZhciAkcGFydG5lcnMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcubGVmdC1wYXJ0bmVycycpO1xuXG5pZigkcmlnaHRCYXIuY2xpZW50SGVpZ2h0IDw9IDE0MDApIHtcbiAgICAkcGFydG5lcnMuY2xhc3NMaXN0LmFkZCgnX3N0YXRpYycpO1xufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
